@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Questionnaire - Question 10</title>
+  <style>
+    body {
+      font-family: 'Apple Chancery', cursive;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAE-0mayHMhw7wISO_kk-u4fiuOuhV5PHefw&s'); /* Replace with your image URL */
+      background-size: cover;
+      font-size:  30px;
+      color: rgb(248, 243, 243);
+      text-shadow: 2px 2px 4px #1f07fa;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 100px;
+    }
+    h1 {
+      font-size: 40px;
+      color: #f7f7fc;
+      text-shadow: 2px 2px 4px #1f07fa;
+    }
+    .button {
+      background-color: #096ff3;
+      color: rgb(252, 247, 247);
+      padding: 20px 40px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 24px;
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+      margin-top: 50px;
+      box-shadow: 3px 3px 6px #000000;
+    }
+    .button:hover {
+      background-color: #f70a0a;
+    }
+    .question {
+      font-size: 28px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px #000000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Health Questionnaire</h1>
+    <div class="question">Do you have food allergies?</div>
+    <button class="button" onclick="saveAnswer('food_allergies', 'yes')">Yes</button>
+    <button class="button" onclick="saveAnswer('food_allergies', 'no')">No</button>
+  </div>
+  <script>
+    function saveAnswer(question, answer) {
+      localStorage.setItem(question, answer);
+      window.location.href = 'menu.html'; // Redirect to the final menu page
+    }
+  </script>
+</body>
+</html>

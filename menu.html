@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Customized Menu</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-image: url('https://i.pinimg.com/originals/3f/48/34/3f483410b8f2f1eb486efa7142deefc3.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      color: rgb(145, 2, 2);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 100px;
+    }
+    h1 {
+      font-size: 40px;
+      color: #f4f5f7;
+      text-shadow: 2px 2px 4px #f7f2f2;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px auto;
+      max-width: 250px;
+      background-color: rgba(7, 248, 115, 0.8);
+      border-radius: 5px;
+      box-shadow: 3px 3px 6px #23da7e;
+    }
+    li {
+      font-size: 24px;
+      margin: 10px 0;
+      padding: 15px;
+      border-bottom: 1px solid #080000;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Customized Menu</h1>
+    <ul id="menu-list"></ul>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var conditions = {
+        diabetes: localStorage.getItem('diabetes'),
+        high_blood_pressure: localStorage.getItem('high_blood_pressure'),
+        heart_disease: localStorage.getItem('heart_disease'),
+        high_cholesterol: localStorage.getItem('high_cholesterol'),
+        obesity: localStorage.getItem('obesity'),
+        gerd: localStorage.getItem('gerd'),
+        osteoarthritis: localStorage.getItem('osteoarthritis'),
+        chronic_kidney_disease: localStorage.getItem('chronic_kidney_disease'),
+        asthma: localStorage.getItem('asthma'),
+        food_allergies: localStorage.getItem('food_allergies')
+      };
+
+      var foodItems = [
+        { name: "Rise", tags: ["healthy"] },
+        { name: "Butter Chicken", tags: ["unhealthy", "heart_disease", "high_cholesterol"] },
+        { name: "Chapppathi", tags: ["healthy"] },
+        { name: "Samosa", tags: ["unhealthy", "diabetes", "high_blood_pressure"] },
+        { name: "Paneer Tikka", tags: ["healthy"] },
+        { name: "Pongal", tags: ["unhealthy", "diabetes"] },
+        { name: "Biryani", tags: ["unhealthy", "heart_disease", "high_cholesterol"] },
+        { name: "Idli", tags: ["healthy"] },
+        { name: "Dosa", tags: ["healthy"] },
+        { name: "Chicken 65", tags: ["unhealthy", "diabetes", "heart_disease"] },
+        { name: "Upma", tags: ["healthy"] },
+        { name: "Fried Rice", tags: ["unhealthy","heart_disease"] }
+      ];
+
+      var filteredMenu = foodItems.filter(function(item) {
+        for (var condition in conditions) {
+          if (conditions[condition] === "yes" && item.tags.includes(condition)) {
+            return false;
+          }
+        }
+        return true;
+      });
+
+      var menuList = document.getElementById('menu-list');
+      filteredMenu.forEach(function(item) {
+        var li = document.createElement('li');
+        li.textContent = item.name;
+        menuList.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Questionnaire - Question 2</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-image: url('https://cdn.pixabay.com/photo/2024/02/10/00/53/biryani-8563961_1280.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      font-size:  30px;
+      color: rgb(243, 239, 239);
+      text-shadow: 2px 2px 4px #1f07fa;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 100px;
+    }
+    h1 {
+      font-size: 40px;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px #1d0fe0;
+    }
+    .button {
+      background-color: #007bff;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 24px;
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+      margin-top: 50px;
+      box-shadow: 3px 3px 6px #000000;
+    }
+    .button:hover {
+      background-color: #f80101;
+    }
+    .question {
+      font-size: 28px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px #000000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Health Questionnaire</h1>
+    <div class="question">Do you have high blood pressure?</div>
+    <button class="button" onclick="saveAnswer('high_blood_pressure', 'yes')">Yes</button>
+    <button class="button" onclick="saveAnswer('high_blood_pressure', 'no')">No</button>
+  </div>
+  <script>
+    function saveAnswer(question, answer) {
+      localStorage.setItem(question, answer);
+      window.location.href = 'question3.html'; // Redirect to the next question
+    }
+  </script>
+</body>
+</html>

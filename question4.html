@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Questionnaire - Question 2</title>
+  <style>
+    body {
+      font-family: 'Apple Chancery', sans-serif;
+      background-image: url('https://i.pinimg.com/736x/3f/1d/5e/3f1d5e2c3b5258ea8e3a6217f075642f.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      font-size:  30px;
+      color: rgb(252, 246, 246);
+      text-shadow: 2px 2px 4px #1f07fa;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 100px;
+    }
+    h1 {
+      font-size: 40px;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px #1e07f3;
+    }
+    .button {
+      background-color: #007bff;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 24px;
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+      margin-top: 50px;
+      box-shadow: 3px 3px 6px #000000;
+    }
+    .button:hover {
+      background-color: #ee0d0d;
+    }
+    .question {
+      font-size: 28px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px #000000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Health Questionnaire</h1>
+    <div class="question">Do you have high_cholestrol ?</div>
+    <button class="button" onclick="saveAnswer('high_cholestrol', 'yes')">Yes</button>
+    <button class="button" onclick="saveAnswer('high_cholestrol', 'no')">No</button>
+  </div>
+  <script>
+    function saveAnswer(question, answer) {
+      localStorage.setItem(question, answer);
+      window.location.href = 'question5.html'; // Redirect to the next question
+    }
+  </script>
+</body>
+</html>
